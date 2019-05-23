@@ -2,8 +2,7 @@
     <div id="product-list">
       <Product v-for="product in getProducts"
         v-bind:key="product.id"
-        v-bind:id="product.id"
-        v-bind:descr="product.descr" />
+        v-bind:Product="product" />
     </div>
 </template>
 
@@ -17,7 +16,7 @@ export default {
   },
   computed: {
     getProducts() {
-      return this.$store.getters.getProducts;
+      return this.$store.state.products;
     },
   },
 };
