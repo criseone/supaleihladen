@@ -1,11 +1,11 @@
 {
   "products": [
-    { "id": 1, "descr": "Zange", "deleted": false},
-    { "id": 2, "descr": "Hammer", "deleted": false},
-    { "id": 3, "descr": "Bohrer", "deleted": false },
-    { "id": 4, "descr": "Meter", "deleted": false },
-    { "id": 5, "descr": "Akkuschrauber", "deleted": false },
-    { "id": 6, "descr": "Säge", "deleted": false },
-    { "id": 7, "descr": "Flammenwerfer", "deleted": false }
+    { "id": 1, "descr": "Zange", "available": true},
+    { "id": 2, "descr": "Hammer", "available": true},
+    { "id": 3, "descr": "Bohrer", "available": true },
+    { "id": 4, "descr": "Meter", "available": true },
+    { "id": 5, "descr": "Akkuschrauber", "available": true },
+    { "id": 6, "descr": "Säge", "available": true },
+    { "id": 7, "descr": "Flammenwerfer", "available": true }
   ]
 }

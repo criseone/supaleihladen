@@ -10,14 +10,13 @@ export default new Vuex.Store({
     getProducts: state => state.products,
   },
   mutations: {
-    delProduct(state, plProduct) {
-      // eslint-disable-next-line no-param-reassign
-      state.products = state.products.filter(product => product !== plProduct);
+    rentProduct(state, plProduct) {
+      Vue.set(plProduct, 'available', false);
     },
   },
   actions: {
-    delProduct({ commit }, plProduct) {
-      commit('delProduct', plProduct);
+    rentProduct({ commit }, plProduct) {
+      commit('rentProduct', plProduct);
     },
   },
 });

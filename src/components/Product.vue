@@ -1,7 +1,7 @@
 <template>
     <div class="product">
         <p>{{ Product.descr }}</p>
-        <Button :onClick="delProduct" :Product="Product" />
+        <Button :onClick="rentProduct" :Product="Product" />
     </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
     Product: Object,
   },
   methods: {
-    ...mapActions(['delProduct']),
+    ...mapActions(['rentProduct']),
   },
 };
 </script>
