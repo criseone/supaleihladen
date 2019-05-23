@@ -29,7 +29,7 @@ box-sizing: border-box;
 text-decoration:none;
 font-family:'Roboto',sans-serif;
 font-weight:300;
-color:rgb(75, 75, 75);
+color:#FFFFFF;
 text-align:center;
 transition: all 0.2s;
 }
