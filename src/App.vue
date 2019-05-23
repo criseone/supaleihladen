@@ -59,4 +59,15 @@ text-align:center;
 transition: all 0.2s;
 }
 
+button:hover{
+color:#000000;
+background-color:#FFFFFF;
+}
+
+@media all and (max-width:30em){
+button{
+display:block;
+margin:0.4em auto;
+}
+}
 </style>
