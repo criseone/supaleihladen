@@ -1,4 +1,3 @@
-/* eslint-disable arrow-body-style */
 import Vue from 'vue';
 import Vuex from 'vuex';
 import Data from '../test-data.json';
@@ -8,14 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: Data,
   getters: {
-    /*
-
-    kept for later use !bug
-
-    getProducts: (state) => {
-      return state.products.sort(product => product.descr);
-    },
-    */
+    getProducts: state => state.products,
   },
   mutations: {
     delProduct(state, plProduct) {
