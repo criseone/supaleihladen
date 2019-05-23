@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style/constans';
+@import '../style/constants';
 
   .product {
   display: flex;
