@@ -1,7 +1,7 @@
 <template>
     <div class="product">
         <p>{{ Product.descr }}</p>
-        <Button :onClick="delProduct" :Product="Product"  />
+        <Button :onClick="delProduct" :Product="Product" />
     </div>
 </template>
 

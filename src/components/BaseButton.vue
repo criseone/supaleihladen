@@ -28,7 +28,7 @@ box-sizing: border-box;
 text-decoration:none;
 font-family:'Roboto',sans-serif;
 font-weight:300;
-color:#FFFFFF;
+color:rgb(75, 75, 75);
 text-align:center;
 transition: all 0.2s;
 }
