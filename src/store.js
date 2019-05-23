@@ -7,7 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: Data,
   getters: {
-    getProducts: state => state.products,
+    Products: state => state.products,
   },
   mutations: {
     rentProduct(state, plProduct) {

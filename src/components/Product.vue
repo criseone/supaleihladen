@@ -1,7 +1,7 @@
 <template>
-    <div class="product">
+    <div class="product" :class="ProductStyle">
         <p>{{ Product.descr }}</p>
-        <Button :onClick="rentProduct" :Product="Product" :description="getAvailability" />
+        <Button :onClick="rentProduct" :Product="Product" :description="ButtonDescription" />
     </div>
 </template>
 
@@ -21,8 +21,11 @@ export default {
     ...mapActions(['rentProduct']),
   },
   computed: {
-    getAvailability() {
+    ButtonDescription() {
       return this.Product.available ? 'Ausleihen' : 'Zurückgeben';
+    },
+    ProductStyle() {
+      return this.Product.available ? 'available' : 'rented';
     },
   },
 };
@@ -42,5 +45,9 @@ export default {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
   width: 10rem;
-}
+  }
+
+  .available {
+    background-color: greenyellow;
+  }
 </style>

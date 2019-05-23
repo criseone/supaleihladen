@@ -1,6 +1,6 @@
 <template>
     <div id="product-list">
-      <Product v-for="product in getProducts"
+      <Product v-for="product in Products"
         v-bind:key="product.id"
         v-bind:Product="product" />
     </div>
@@ -18,7 +18,7 @@ export default {
     Product,
   },
   computed: {
-    ...mapGetters(['getProducts']),
+    ...mapGetters(['Products']),
   },
 };
 </script>
