@@ -1,17 +1,19 @@
 <template>
     <div class="product">
         <p>{{ Product.descr }}</p>
-        <button @click="delProduct(Product)">
-          delete
-        </button>
+        <Button :onClick="delProduct" :Product="Product"  />
     </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
+import Button from './BaseButton.vue';
 
 export default {
   name: 'Product',
+  components: {
+    Button,
+  },
   props: {
     Product: Object,
   },
