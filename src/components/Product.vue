@@ -32,15 +32,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../style/constans';
+
   .product {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color:violet;
-  border-radius: 0.3rem;
+  background-color: #f1f1f1;
   padding: 1rem;
-  color: #fff;
+  color: $primary-color;
   margin-bottom: 1rem;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
@@ -48,6 +49,7 @@ export default {
   }
 
   .available {
-    background-color: greenyellow;
+    color: black;
+    background-color: white;
   }
 </style>
