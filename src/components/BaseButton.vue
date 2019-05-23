@@ -1,6 +1,6 @@
 <template>
         <button @click="onClick(Product)">
-          {{ description }}
+          delete
         </button>
 </template>
 
