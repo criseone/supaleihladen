@@ -13,10 +13,17 @@ export default new Vuex.Store({
     rentProduct(state, plProduct) {
       Vue.set(plProduct, 'available', false);
     },
+    returnProduct(state, plProduct) {
+      Vue.set(plProduct, 'available', true);
+    },
   },
   actions: {
     rentProduct({ commit }, plProduct) {
-      commit('rentProduct', plProduct);
+      if (plProduct.available) {
+        commit('rentProduct', plProduct);
+      } else {
+        commit('returnProduct', plProduct);
+      }
     },
   },
 });

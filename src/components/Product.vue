@@ -1,7 +1,7 @@
 <template>
     <div class="product">
         <p>{{ Product.descr }}</p>
-        <Button :onClick="rentProduct" :Product="Product" />
+        <Button :onClick="rentProduct" :Product="Product" :description="getAvailability" />
     </div>
 </template>
 
@@ -19,6 +19,11 @@ export default {
   },
   methods: {
     ...mapActions(['rentProduct']),
+  },
+  computed: {
+    getAvailability() {
+      return this.Product.available ? 'Ausleihen' : 'Zurückgeben';
+    },
   },
 };
 </script>
