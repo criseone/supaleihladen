@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../style/constants';
+
 button {
 display:inline-block;
 padding:0.35em 1.2em;
@@ -31,11 +33,12 @@ font-weight:300;
 color:black;
 text-align:center;
 transition: all 0.2s;
+background-color: $button-color-1;
 }
 
 button:hover{
-color:#383838;
-background-color:#FFFFFF;
+color: black;
+background-color: $button-color-2;
 }
 
 @media all and (max-width:30em){
