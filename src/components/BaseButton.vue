@@ -1,6 +1,6 @@
 <template>
         <button @click="onClick(Product)">
-          delete
+          {{ description }}
         </button>
 </template>
 
@@ -13,6 +13,7 @@ export default {
       required: true,
     },
     Product: Object,
+    description: String,
   },
 };
 </script>
