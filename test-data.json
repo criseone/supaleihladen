@@ -6,6 +6,6 @@
     { "id": 4, "brand": "Bosch", "descr": "Meter", "available": true },
     { "id": 5, "brand": "Bosch", "descr": "Akkuschrauber", "available": true },
     { "id": 6, "brand": "Bosch", "descr": "Säge", "available": true },
-    { "id": 7, "brand": "Bosch", "descr": "Flammenwerfer", "available": true }
+    { "id": 7, "brand": "The Boring Company", "descr": "Flammenwerfer Extra Large", "available": true }
   ]
 }

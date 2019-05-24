@@ -42,24 +42,39 @@ export default {
 @import '../style/_constants';
 
   .product {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: $secondary-color;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-  width: 30vmin;
-  font-family: $primary-font;
-  text-transform: uppercase;
-  display: flex;
-  flex-flow: row wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color: $secondary-color;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    width: 50vmin;
+    font-family: $primary-font;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .available {
+    color: black;
+    background-color: $secondary-color;
   }
 
   .left {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     width: 25%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .right {
+    float: left;
   }
 
   .descr {
@@ -70,13 +85,8 @@ export default {
     color: $tertiary-color;
   }
 
-  .available {
-    color: black;
-    background-color: $secondary-color;
-  }
-
-  img {
-    width: 100%;
+  .button {
+    float: right;
   }
 
 </style>
