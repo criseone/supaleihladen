@@ -1,11 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import Data from '../test-data.json';
+
+import Provider from './provider';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: Data,
+  state: {
+    Products: [],
+  },
   getters: {
     Products: state => state.products,
   },
@@ -24,6 +27,10 @@ export default new Vuex.Store({
       } else {
         commit('returnProduct', plProduct);
       }
+    },
+    getProducts() {
+      const products = Provider.GET.Products();
+      console.log(products);
     },
   },
 });

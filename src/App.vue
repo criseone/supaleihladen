@@ -12,6 +12,9 @@ export default {
   components: {
     ProductList,
   },
+  created() {
+    this.$store.dispatch('getProducts');
+  },
 };
 </script>
 
