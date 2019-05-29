@@ -4,7 +4,7 @@
         <img class="image" src="../assets/placeholder_image.png" alt="Placeholder Image">
         </div>
         <div class="right">
-        <p class="descr">{{ Product.descr }}</p>
+        <p class="descr">{{ Product.description }}</p>
         <p class="brand">{{ Product.brand }}</p>
         <Button class="button" :onClick="rentProduct"
         :Product="Product" :description="ButtonDescription" />
@@ -25,7 +25,9 @@ export default {
     Product: Object,
   },
   methods: {
-    ...mapActions(['rentProduct']),
+    ...mapActions({
+      rentProduct  : 'productsModule/rentProduct',
+    }),
   },
   computed: {
     ButtonDescription() {

@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import Provider from './provider';
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -10,27 +8,27 @@ export default new Vuex.Store({
     Products: [],
   },
   getters: {
-    Products: state => state.products,
+    Products: state => state.Products,
   },
   mutations: {
-    rentProduct(state, plProduct) {
-      Vue.set(plProduct, 'available', false);
+    rentProduct(state, product) {
+      Vue.set(product, 'available', false);
     },
-    returnProduct(state, plProduct) {
-      Vue.set(plProduct, 'available', true);
+    returnProduct(state, product) {
+      Vue.set(product, 'available', true);
+    },
+    setProducts(state, products) {
+      console.log(products);
+      Vue.set(state, 'items', [...products]);
     },
   },
   actions: {
-    rentProduct({ commit }, plProduct) {
-      if (plProduct.available) {
-        commit('rentProduct', plProduct);
+    rentProduct({ commit }, product) {
+      if (product.available) {
+        commit('rentProduct', product);
       } else {
-        commit('returnProduct', plProduct);
+        commit('returnProduct', product);
       }
-    },
-    getProducts() {
-      const products = Provider.GET.Products();
-      console.log(products);
     },
   },
 });

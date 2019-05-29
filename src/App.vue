@@ -13,7 +13,7 @@ export default {
     ProductList,
   },
   created() {
-    this.$store.dispatch('getProducts');
+    this.$store.dispatch('productsModule/openDBChannel');
   },
 };
 </script>
