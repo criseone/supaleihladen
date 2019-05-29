@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      rentProduct  : 'productsModule/rentProduct',
+      rentProduct: 'productsModule/rentProduct',
     }),
   },
   computed: {
