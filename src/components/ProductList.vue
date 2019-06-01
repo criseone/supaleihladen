@@ -18,7 +18,9 @@ export default {
     Product,
   },
   computed: {
-    ...mapGetters(['Products']),
+    ...mapGetters({
+      Products: 'productsModule/Products',
+    }),
   },
 };
 </script>
