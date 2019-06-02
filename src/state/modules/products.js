@@ -16,6 +16,10 @@ const productsModule = {
       Vue.set(product, 'available', !product.available);
       dispatch('set', product);
     },
+    likeProduct({ dispatch }, product) {
+      Vue.set(product, 'favourite', !product.favourite);
+      dispatch('set', product);
+    },
   },
 };
 

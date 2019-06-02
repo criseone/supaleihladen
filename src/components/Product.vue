@@ -1,5 +1,5 @@
 <template>
-    <div class="product" :class="ProductStyle">
+    <div class="product" :class="ProductAvailabilty">
         <div class="left">
         <img class="image" src="../assets/placeholder_image.png" alt="Placeholder Image">
         </div>
@@ -8,6 +8,8 @@
         <p class="brand">{{ Product.brand }}</p>
         <Button class="button" :onClick="rentProduct"
         :Product="Product" :description="ButtonDescription" />
+        <Button class="button" :onClick="likeProduct"
+        :Product="Product" :description="FavouriteButtonDescription" />
         </div>
     </div>
 </template>
@@ -27,15 +29,20 @@ export default {
   methods: {
     ...mapActions({
       rentProduct: 'productsModule/rentProduct',
+      likeProduct: 'productsModule/likeProduct',
     }),
   },
   computed: {
     ButtonDescription() {
       return this.Product.available ? 'Ausleihen' : 'Zurückgeben';
     },
-    ProductStyle() {
+    ProductAvailabilty() {
       return this.Product.available ? 'available' : 'rented';
     },
+    FavouriteButtonDescription() {
+      return this.Product.favourite ? 'Unlike' : 'Like';
+    },
+
   },
 };
 </script>
