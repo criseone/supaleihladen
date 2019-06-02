@@ -1,5 +1,5 @@
 <template>
-    <div class="product" :class="ProductAvailabilty">
+    <div class="product">
         <div class="left">
         <img class="image" src="../assets/placeholder_image.png" alt="Placeholder Image">
         </div>
@@ -36,9 +36,6 @@ export default {
     ButtonDescription() {
       return this.Product.available ? 'Ausleihen' : 'Zurückgeben';
     },
-    ProductAvailabilty() {
-      return this.Product.available ? 'available' : 'rented';
-    },
     FavouriteButtonDescription() {
       return this.Product.favourite ? 'Unlike' : 'Like';
     },
@@ -53,7 +50,6 @@ export default {
   .product {
     display: flex;
     flex-direction: column;
-    justify-content: left;
     background-color: $secondary-color;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -64,6 +60,7 @@ export default {
     text-transform: uppercase;
     display: flex;
     flex-flow: row wrap;
+    border: 3px solid $primary-color;
   }
 
   .available {
@@ -83,7 +80,7 @@ export default {
   }
 
   .right {
-    float: left;
+    margin-left: 50px;
   }
 
   .descr {
@@ -96,6 +93,7 @@ export default {
 
   .button {
     float: right;
+    margin-left: 50px;
   }
 
 </style>
