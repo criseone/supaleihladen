@@ -6,6 +6,7 @@
         <div class="right">
         <p class="descr">{{ Product.description }}</p>
         <p class="brand">{{ Product.brand }}</p>
+        <p class="count">{{ Product.count_available }} / {{ Product.count_total }}</p>
         <Button class="button" :onClick="rentProduct"
         :Product="Product" :description="ButtonDescription" />
         <Button class="button" :onClick="likeProduct"
