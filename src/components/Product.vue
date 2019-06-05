@@ -3,14 +3,23 @@
         <div class="left">
         <img class="image" src="../assets/placeholder_image.png" alt="Placeholder Image">
         </div>
-        <div class="right">
+        <div class="right-top">
         <p class="descr">{{ Product.description }}</p>
         <p class="brand">{{ Product.brand }}</p>
+        </div>
+        <div class="right-bottom">
         <p class="count">{{ Product.count_available }} / {{ Product.count_total }}</p>
-        <Button class="button" :onClick="rentProduct"
-        :Product="Product" :description="ButtonDescription" />
-        <Button class="button" :onClick="likeProduct"
-        :Product="Product" :description="FavouriteButtonDescription" />
+        <Button class="button"  v-if="isAvailable"
+                                :onClick="rentProduct"
+                                :Product="Product"
+                                :description="rentDescription" />
+        <Button class="button"  v-if="isRentedOut"
+                                :onClick="returnProduct"
+                                :Product="Product"
+                                :description="returnDescription" />
+        <Button class="button"  :onClick="likeProduct"
+                                :Product="Product"
+                                :description="FavouriteButtonDescription" />
         </div>
     </div>
 </template>
@@ -30,6 +39,7 @@ export default {
   methods: {
     ...mapActions({
       rentProduct: 'productsModule/rentProduct',
+      returnProduct: 'productsModule/returnProduct',
       likeProduct: 'productsModule/likeProduct',
     }),
   },
@@ -40,7 +50,16 @@ export default {
     FavouriteButtonDescription() {
       return this.Product.favourite ? 'Unlike' : 'Like';
     },
-
+    isAvailable() {
+      return this.Product.count_available > 0;
+    },
+    isRentedOut() {
+      return this.Product.count_available !== this.Product.count_total;
+    },
+    /* isAvailable: () => this.Product.count_available > 0,
+    isRentedOut: () => this.Product.count_available !== this.Product.count_total, */
+    rentDescription: () => 'Ausleihen',
+    returnDescription: () => 'Zurückgeben',
   },
 };
 </script>
@@ -80,8 +99,12 @@ export default {
     width: 100%;
   }
 
-  .right {
+  .right-top {
     margin-left: 50px;
+  }
+
+  .right-bottom {
+   flex-direction: row;
   }
 
   .descr {

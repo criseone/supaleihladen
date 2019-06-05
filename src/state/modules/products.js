@@ -13,7 +13,15 @@ const productsModule = {
   mutations: {},
   actions: {
     rentProduct({ dispatch }, product) {
-      Vue.set(product, 'available', !product.available);
+      if (product.count_available > 0) {
+        Vue.set(product, 'count_available', product.count_available - 1);
+      }
+      dispatch('set', product);
+    },
+    returnProduct({ dispatch }, product) {
+      if (product.count_available < product.count_total) {
+        Vue.set(product, 'count_available', product.count_available + 1);
+      }
       dispatch('set', product);
     },
     likeProduct({ dispatch }, product) {
