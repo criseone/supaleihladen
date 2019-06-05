@@ -1,7 +1,7 @@
 <template>
     <div class="product">
         <div class="left">
-        <img class="image" src="../assets/placeholder_image.png" alt="Placeholder Image">
+        <img class="image" :src="Product.img_link" alt="Placeholder Image">
         </div>
         <div class="right-top">
         <p class="descr">{{ Product.description }}</p>
