@@ -7,6 +7,10 @@
         </div>
         <div class="right">
         <div class="top-right">
+                  <Button class="button favoriteflag"  :onClick="likeProduct"
+                                :Product="Product"
+                                :description="FavouriteButtonDescription" />
+        </div>
         <div class="title">
         <span class="descr">{{ Product.description }}</span>
         </div>
@@ -14,27 +18,19 @@
         <span class="brand">{{ Product.brand }}</span>
         </div>
         <div class="favoriteflag">
-        <Button class="button"  :onClick="likeProduct"
-                                :Product="Product"
-                                :description="FavouriteButtonDescription" />
-        </div>
         </div>
         <div class="bottom-right">
         <div class="tag">
         <span class="count">{{ Product.count_available }} / {{ Product.count_total }} </span>
         </div>
-        <div class="rentbutton">
-        <Button class="button"  v-if="isAvailable"
+        <Button class="button rent"  v-if="isAvailable"
                                 :onClick="rentProduct"
                                 :Product="Product"
                                 :description="rentDescription" />
-        </div>
-        <div class="returnbutton">
-        <Button class="button"  v-if="isRentedOut"
+        <Button class="button return"  v-if="isRentedOut"
                                 :onClick="returnProduct"
                                 :Product="Product"
                                 :description="returnDescription" />
-        </div>
         </div>
         </div>
     </div>
@@ -95,6 +91,8 @@ export default {
     transition: opacity 0.3s ease-in-out;
     font-family: $primary-font;
     text-transform: uppercase;
+    border-bottom: 0.1em solid $primary-color;
+    padding-bottom: 8vw;
   }
 
   .right {
@@ -129,50 +127,31 @@ export default {
   }
 
   .favoriteflag {
-  position: absolute;
-  top: 0;
-  right: 20%;
-  width: 10vmin;
+  float: right;
   }
 
-.bottom-right {
-  display: flex;
-}
-
   .tag {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 20vmin;
+    float: left;
+    text-align: left;
   }
 
   .count {
-    order: 1;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     color: $secondary-color;
     background-color: $primary-color;
     border-radius: 10vmin;
     display: inline-block;
     width: 70%;
     font-size: 4vw;
+    text-align: center;
   }
 
-  .returnbutton {
-    order: 2;
-    position: absolute;
-    bottom: 0;
-    right: 20%;
-    width: 10vmin;
+  .return {
+    float: right;
   }
 
-  .rentbutton {
-    order: 3;
-    position: absolute;
-    bottom: 0;
-    right: 60%;
-    width: 10vmin;
+  .rent {
+    float: left;
   }
 
   .descr {

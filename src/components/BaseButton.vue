@@ -32,7 +32,7 @@ transition: all 0.2s;
 background-color: $secondary-color;
 text-transform: uppercase;
 border-radius: 2pt;
-font-size: 4vw;
+font-size: 3vw;
 }
 
 button:hover{
