@@ -22,7 +22,6 @@ export default {
 @import '../style/constants';
 
 button {
-padding:0.35em 1.2em;
 border:0.1em solid $button-color-1;
 box-sizing: border-box;
 font-family: $primary-font;
@@ -33,6 +32,7 @@ transition: all 0.2s;
 background-color: $secondary-color;
 text-transform: uppercase;
 border-radius: 2pt;
+font-size: 4vw;
 }
 
 button:hover{
@@ -43,8 +43,6 @@ background-color: $button-color-2;
 
 @media all and (max-width:30em){
 button{
-display:block;
-margin:0.4em auto;
-}
+display:block;}
 }
 </style>
