@@ -3,23 +3,33 @@
         <div class="left">
         <img class="image" src="../assets/placeholder_image.png" alt="Placeholder Image">
         </div>
+        <div class="right">
         <div class="right-top">
-        <p class="descr">{{ Product.description }}</p>
-        <p class="brand">{{ Product.brand }}</p>
+        <span class="descr">{{ Product.description }}</span>
+        <span class="brand">{{ Product.brand }}</span>
         </div>
         <div class="right-bottom">
-        <p class="count">{{ Product.count_available }} / {{ Product.count_total }}</p>
+        <div>
+        <span class="count">{{ Product.count_available }} / {{ Product.count_total }} </span>
+        </div>
+        <div>
         <Button class="button"  v-if="isAvailable"
                                 :onClick="rentProduct"
                                 :Product="Product"
                                 :description="rentDescription" />
+        </div>
+        <div>
         <Button class="button"  v-if="isRentedOut"
                                 :onClick="returnProduct"
                                 :Product="Product"
                                 :description="returnDescription" />
+        </div>
+        <div>
         <Button class="button"  :onClick="likeProduct"
                                 :Product="Product"
                                 :description="FavouriteButtonDescription" />
+        </div>
+        </div>
         </div>
     </div>
 </template>
@@ -69,42 +79,18 @@ export default {
 
   .product {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-flow: row wrap;
     background-color: $secondary-color;
-    padding: 1rem;
     margin-bottom: 1rem;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
-    width: 50vmin;
     font-family: $primary-font;
     text-transform: uppercase;
-    display: flex;
-    flex-flow: row wrap;
-    border: 3px solid $primary-color;
-  }
-
-  .available {
-    color: black;
-    background-color: $secondary-color;
-  }
-
-  .left {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    width: 25%;
   }
 
   img {
-    width: 100%;
-  }
-
-  .right-top {
-    margin-left: 50px;
-  }
-
-  .right-bottom {
-   flex-direction: row;
+    width: 25vmin;
   }
 
   .descr {
@@ -112,12 +98,35 @@ export default {
   }
 
   .brand {
-    color: $tertiary-color;
+    color: $button-color-1;
   }
 
   .button {
-    float: right;
-    margin-left: 50px;
+    display: inline-block;
+    width: 25%;
+  }
+
+  .count {
+    color: $secondary-color;
+    background-color: $primary-color;
+    border-radius: 10vmin;
+    display: inline-block;
+    width: 25%;
+  }
+
+  .right {
+    width: 75vmin;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-top {
+    width: 100%;
+}
+
+  .right-bottom {
+    flex-flow: row wrap;
+    justify-content: flex-start;
   }
 
 </style>

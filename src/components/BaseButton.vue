@@ -22,23 +22,21 @@ export default {
 @import '../style/constants';
 
 button {
-display:inline-block;
 padding:0.35em 1.2em;
 border:0.1em solid $button-color-1;
-margin:0 0.3em 0.3em 0;
 box-sizing: border-box;
-text-decoration:none;
 font-family: $primary-font;
 font-weight:300;
-color:black;
+color: $button-color-1;
 text-align:center;
 transition: all 0.2s;
-background-color: $button-color-1;
+background-color: $secondary-color;
 text-transform: uppercase;
+border-radius: 2pt;
 }
 
 button:hover{
-color: black;
+color: $secondary-color;
 border:0.1em solid $button-color-2;
 background-color: $button-color-2;
 }
