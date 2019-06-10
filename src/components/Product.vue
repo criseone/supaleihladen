@@ -166,14 +166,23 @@ export default {
     text-align: center;
   }
 
+  .bottom-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
   .return {
-    float: right;
+    order: 1;
+    //float: right;
+    margin-top: 10px;
     min-height: 30pt;
     max-height: 66pt;
   }
 
   .rent {
+    order: 2;
     margin-left: 10px;
+    margin-top: 10px;
     float: right;
     min-height: 30pt;
     max-height: 66pt;
