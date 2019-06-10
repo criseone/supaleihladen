@@ -140,7 +140,7 @@ export default {
   }
 
   .tag {
-    width: 20vmin;
+    width: 20vw;
     position: absolute;
     bottom: 0%;
     left: 0%;
