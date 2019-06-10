@@ -32,7 +32,7 @@ transition: all 0.2s;
 background-color: $secondary-color;
 text-transform: uppercase;
 border-radius: 2pt;
-font-size: 3vw;
+font-size: 20pt;
 }
 
 button:hover{
@@ -41,7 +41,7 @@ border:0.1em solid $button-color-2;
 background-color: $button-color-2;
 }
 
-@media all and (max-width:30em){
+@media all and (max-width:60em){
 button{
 display:block;}
 }

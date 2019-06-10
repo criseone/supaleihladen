@@ -19,6 +19,7 @@
         </div>
         <div class="favoriteflag">
         </div>
+        <div class="listspacer"></div>
         <div class="bottom-right">
         <div class="tag">
         <span class="count">{{ Product.count_available }} / {{ Product.count_total }} </span>
@@ -82,7 +83,7 @@ export default {
   .product {
     display: flex;
     flex-direction: row;
-    width: 90vmin;
+    width: 90vw;
     grid-template-columns: auto auto auto auto auto;
     grid-gap: 10px;
     background-color: $secondary-color;
@@ -97,18 +98,19 @@ export default {
 
   .right {
     order: 2;
-    width: 65vmin;
+    width: 70vw;
     height: 20vmin;
     position: relative;
   }
 
   .left {
     order: 1;
+    position: relative;
   }
 
   .picture {
-    width: 25vmin;
-    height: 20vmin;
+    width: 20vw;
+    height: 20vw;
   }
 
   img {
@@ -119,6 +121,7 @@ export default {
   .title {
     text-align: left;
     font-size: 4vw;
+    max-height: 70px;
   }
 
   .subtitle {
@@ -126,13 +129,21 @@ export default {
     font-size: 4vw;
   }
 
+  .brand {
+    max-height: 70px;
+  }
+
   .favoriteflag {
   float: right;
+  min-height: 44pt;
+  max-height: 55pt;
   }
 
   .tag {
     width: 20vmin;
-    float: left;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
     text-align: left;
   }
 
@@ -148,10 +159,15 @@ export default {
 
   .return {
     float: right;
+    margin-right: 10px;
+    min-height: 44pt;
+    max-height: 66pt;
   }
 
   .rent {
-    float: left;
+    float: right;
+    min-height: 44pt;
+    max-height: 66pt;
   }
 
   .descr {
