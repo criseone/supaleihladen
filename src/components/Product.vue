@@ -141,16 +141,14 @@ export default {
 
   .tag {
     width: 20vw;
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
+    float: left;
     text-align: left;
   }
 
   .count {
     color: $secondary-color;
     background-color: $primary-color;
-    border-radius: 10vmin;
+    border-radius: 10vw;
     display: inline-block;
     width: 70%;
     font-size: 3vw;
