@@ -7,17 +7,17 @@
         </div>
         <div class="right">
         <div class="top-right">
-                  <Button class="button favoriteflag"  :onClick="likeProduct"
+                  <div class="favoriteflag" @click="onClick(Product)"
+                                :onClick="likeProduct"
                                 :Product="Product"
-                                :description="FavouriteButtonDescription" />
+                                v-bind:class="{ active: FavouriteButtonDescription }">
+                  </div>
         </div>
         <div class="title">
         <span class="descr">{{ Product.description }}</span>
         </div>
         <div class="subtitle">
         <span class="brand">{{ Product.brand }}</span>
-        </div>
-        <div class="favoriteflag">
         </div>
         <div class="listspacer"></div>
         <div class="bottom-right">
@@ -61,7 +61,7 @@ export default {
       return this.Product.available ? 'borrow' : 'return';
     },
     FavouriteButtonDescription() {
-      return this.Product.favourite ? 'Unlike' : 'Like';
+      return this.Product.favourite;
     },
     isAvailable() {
       return this.Product.count_available > 0;
@@ -98,8 +98,8 @@ export default {
 
   .right {
     order: 2;
-    width: 70vw;
-    height: 20vmin;
+    width: 65vw;
+    height: 25vw;
     position: relative;
   }
 
@@ -109,8 +109,8 @@ export default {
   }
 
   .picture {
-    width: 20vw;
-    height: 20vw;
+    width: 25vw;
+    height: 25vw;
   }
 
   img {
@@ -134,12 +134,23 @@ export default {
   }
 
   .favoriteflag {
+  background-image: url("../assets/ribbon-empty.png");
+  background-repeat: no-repeat;
+  background-position: top right;
   float: right;
-  min-height: 44pt;
-  max-height: 55pt;
+  min-height: 30pt;
+  max-height: 66pt;
+  width: 10vw;
+  }
+
+  .favoriteflag.active {
+  background-image: url("../assets/ribbon-filled.png");
   }
 
   .tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 20vw;
     float: left;
     text-align: left;
@@ -157,14 +168,14 @@ export default {
 
   .return {
     float: right;
-    margin-right: 10px;
-    min-height: 44pt;
+    min-height: 30pt;
     max-height: 66pt;
   }
 
   .rent {
+    margin-left: 10px;
     float: right;
-    min-height: 44pt;
+    min-height: 30pt;
     max-height: 66pt;
   }
 
