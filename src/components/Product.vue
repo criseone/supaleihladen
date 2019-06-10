@@ -7,9 +7,7 @@
         </div>
         <div class="right">
         <div class="top-right">
-                  <div class="favoriteflag" @click="onClick(Product)"
-                                :onClick="likeProduct"
-                                :Product="Product"
+                  <div class="favoriteflag" @click="likeProduct(Product)"
                                 v-bind:class="{ active: FavouriteButtonDescription }">
                   </div>
         </div>
